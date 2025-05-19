@@ -199,45 +199,47 @@ const Dashboard = () => {
 
           <Box component="main" sx={{ mt: 8, flexGrow: 1, p: 3 }}>
             {selectedStudent ? (
-              <Grid container spacing={3} sx={{ height: '100%', alignItems: 'flex-start' }}>
-                 <Grid item xs={12} md={8} sx={{ height: '88vh' ,width: '50%'}}>
-                  <MessagesSection
-                    studentId={selectedStudent.id}
-                    studentName={`${selectedStudent.first_name} ${selectedStudent.last_name}`}
-                  />
-                </Grid>
+             <Grid container spacing={3} sx={{ height: '100%', alignItems: 'flex-start' }}>
+  <Grid item xs={12} md={7} sx={{ height: '88vh',width:'50%' }}>
+    <MessagesSection
+      studentId={selectedStudent.id}
+      studentName={`${selectedStudent.first_name} ${selectedStudent.last_name}`}
+    />
+  </Grid>
 
-                <Grid item xs={12} md={4} sx={{ 
-                  position: 'sticky',
-                  top: 80,
-                  height: '88vh',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 2
-                }}>
-                  <Box sx={{
-                    flex: 1,
-                    overflowY: 'auto',
-                    border: 1,
-                    borderColor: 'divider',
-                    borderRadius: 2,
-                    p: 1
-                  }}>
-                    <CreativeProgress studentId={selectedStudent.id} />
-                  </Box>
-                  
-                  <Box sx={{
-                    flex: 1,
-                    overflowY: 'auto',
-                    border: 1,
-                    borderColor: 'divider',
-                    borderRadius: 2,
-                    p: 1
-                  }}>
-                    <QuizResults studentId={selectedStudent.id} />
-                  </Box>
-                </Grid>
-              </Grid>
+  <Grid item xs={12} md={5} sx={{ 
+    position: 'sticky',
+    top: 80,
+    height: '88vh',
+    width: '40%',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 2
+  }}>
+    <Box sx={{
+      flex: 1,
+      overflowY: 'auto',
+      border: 1,
+      borderColor: 'divider',
+      borderRadius: 2,
+      p: 1
+    }}>
+      <CreativeProgress studentId={selectedStudent.id} />
+    </Box>
+    
+    <Box sx={{
+      flex: 1,
+      overflowY: 'auto',
+      border: 1,
+      borderColor: 'divider',
+      borderRadius: 2,
+      p: 1
+    }}>
+      <QuizResults studentId={selectedStudent.id} />
+    </Box>
+  </Grid>
+</Grid>
+
             ) : (
               <Typography variant="h6" color="textSecondary">
                 Welcome! Select a student to view details
